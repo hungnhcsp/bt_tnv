@@ -23,7 +23,9 @@
         <menuitem id="menu_chuc_danh" name="Chức danh" parent="menu_bao_cao_thong_ke" sequence="2"/>
         <!-- Cấu hình -->
         <menuitem id="menu_cau_hinh_knl" name="Cấu hình" parent="menu_ks_khung_nang_luc" sequence="4"/>
-        <menuitem id="menu_tu_dien_nang_luc" name="Từ điển năng lực" parent="menu_cau_hinh_knl" sequence="1"/>
+        <menuitem id="menu_cau_hinh_knl" name="Cấu hình" parent="menu_ks_khung_nang_luc" sequence="4"/>
+        <menuitem id="menu_tu_dien_nang_luc" name="Từ điển năng lực" parent="menu_cau_hinh_knl" action="action_vnpt_exam_competencies" sequence="1"/>
+        <menuitem id="menu_tu_dien_nang_luc_tree" name="Cây từ điển năng lực" parent="menu_cau_hinh_knl" action="vnpt_exam_competencies_tree_action" sequence="2"/>
         <menuitem id="menu_dl_muc_nang_luc" name="Quy đổi mức năng lực" parent="menu_cau_hinh_knl" sequence="2"/>
         <menuitem id="menu_quan_ly_tag" name="Quản lý tag" parent="menu_cau_hinh_knl" sequence="3"/>
         <menuitem id="menu_quan_ly_cau_hinh_khac" name="Quản lý cấu hình khác" parent="menu_cau_hinh_knl" sequence="4"/>
