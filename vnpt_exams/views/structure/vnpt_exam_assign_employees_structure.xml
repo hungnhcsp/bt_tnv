@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="vnpt_exam_assign_employees_structure_form" model="ir.ui.view">
+            <field name="name">vnpt_exam_assign_employees_structure_from</field>
+            <field name="model">vnpt_exam_assign_employees_structure</field>
+            <field name="arch" type="xml">
+                <form string="Danh sách nhân viên tham gia khảo sát">
+                    <sheet>
+                        <group col="4">
+                            <group  colspan="2">
+                                <field name="department_id"/>
+                                <field name="employee_id" domain="[('department_id', '=', department_id),('status', '=', 'confirmed')]"/>
+                                <field name="is_active"/>
+                            </group>
+                            <group  colspan="2">
+                                <field name="structure_id"/>
+                                <field name="ma_nv"/>
+                                <field name="note"/>
+
+                            </group>
+                        </group>
+                    </sheet>
+                     <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="vnpt_exam_assign_employees_structure_tree" model="ir.ui.view">
+            <field name="name">vnpt_exam_assign_employees_structure_tree</field>
+            <field name="model">vnpt_exam_assign_employees_structure</field>
+            <field name="arch" type="xml">
+                <tree string="Danh sách nhân viên tham gia khảo sát">
+                    <field name="structure_id"/>
+                    <field name="employee_id"/>
+                    <field name="department_id"/>
+                    <field name="ma_nv"/>
+                    <field name="is_active"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="vnpt_exam_assign_employees_structure_search" model="ir.ui.view">
+            <field name="name">vnpt_exam_assign_employees_structure_tree</field>
+            <field name="model">vnpt_exam_assign_employees_structure</field>
+            <field name="arch" type="xml">
+                <search string="Danh sách nhân viên tham gia khảo sát">
+                    <field name="structure_id"/>
+                    <field name="employee_id"/>
+                    <field name="department_id"/>
+                    <field name="ma_nv"/>
+                    <group expand="0" string="Nhóm theo">
+                        <filter name='group_department_id' string="Phòng ban" icon="terp-personal+" domain="[]"
+                                context="{'group_by':'department_id'}"/>
+                    </group>
+
+                </search>
+            </field>
+        </record>
+
+        <record id="vnpt_exam_assign_employees_structure_action" model="ir.actions.act_window">
+            <field name="name">Danh sách nhân viên tham gia khảo sát</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">vnpt_exam_assign_employees_structure</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Bạn chưa tạo dữ liệu
+              </p>
+            </field>
+        </record>
+    </data>
+</openerp>

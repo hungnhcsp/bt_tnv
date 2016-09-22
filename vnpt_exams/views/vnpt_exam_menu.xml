@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <menuitem name="Khảo sát khung năng lực" id="menu_ks_khung_nang_luc" />
+        <!-- Khung năng lực -->
+        <menuitem id="menu_quan_tri_bai_thi" name="Khung năng lực" parent="menu_ks_khung_nang_luc" sequence="1"/>
+        <menuitem id="menu_cau_truc_de_thi" name="Cấu trúc đề thi" action="vnpt_exams_structures_action" parent="menu_quan_tri_bai_thi"
+                  sequence="1"/>
+        <menuitem id="menu_quan_ly_de_thi" name="Quản lý đề thi" parent="menu_quan_tri_bai_thi" sequence="2"/>
+        <menuitem id="menu_quan_ly_bo_cau_hoi" name="Quản lý bộ câu hỏi" parent="menu_quan_tri_bai_thi" sequence="3"/>
+        <!-- Chấm thi -->
+        <menuitem id="menu_cham_thi" name="Chấm thi" parent="menu_ks_khung_nang_luc" sequence="2"/>
+        <menuitem id="menu_cau_hoi_tu_luan" name="Câu hỏi tự luận" parent="menu_cham_thi" sequence="1"/>
+        <menuitem id="menu_de_thi_tu_luan" name="Đề thi tự luận" parent="menu_cham_thi" sequence="2"/>
+        <!-- Báo cáo & thống kê -->
+        <menuitem id="menu_bao_cao_thong_ke" name="Báo cáo &amp; thống kê" parent="menu_ks_khung_nang_luc" sequence="3"/>
+        <menuitem id="menu_ket_qua_thi" name="Kết quản thi" parent="menu_bao_cao_thong_ke" sequence="1"/>
+        <menuitem id="menu_chuc_danh" name="Chức danh" parent="menu_bao_cao_thong_ke" sequence="2"/>
+        <!-- Cấu hình -->
+        <menuitem id="menu_cau_hinh_knl" name="Cấu hình" parent="menu_ks_khung_nang_luc" sequence="4"/>
+        <menuitem id="menu_tu_dien_nang_luc" name="Từ điển năng lực" parent="menu_cau_hinh_knl" sequence="1"/>
+        <menuitem id="menu_dl_muc_nang_luc" name="Quy đổi mức năng lực" parent="menu_cau_hinh_knl" sequence="2"/>
+        <menuitem id="menu_quan_ly_tag" name="Quản lý tag" parent="menu_cau_hinh_knl" sequence="3"/>
+        <menuitem id="menu_quan_ly_cau_hinh_khac" name="Quản lý cấu hình khác" parent="menu_cau_hinh_knl" sequence="4"/>
+        <!-- Tài liệu đào tạo-->
+        <menuitem id="menu_tai_lieu_dt" name="Tài liệu đào tạo" parent="menu_ks_khung_nang_luc" sequence="5"/>
+
+        <!-- Config -->
+        <!-- Exams -->
+        <!-- Statistic -->
+        <!-- Structure -->
+    </data>
+</openerp>
