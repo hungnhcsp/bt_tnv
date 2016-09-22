@@ -1,5 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
+        <!-- Từ điển năng lực -->
+        <record id="vnpt_exam_competencies_form" model="ir.ui.view">
+            <field name="name">vnpt_exam_competencies_form</field>
+            <field name="model">vnpt_exam_competencies</field>
+            <field name="arch" type="xml">
+                <form string="Từ điển năng lực">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="code_competency"/>
+                            <field name="type"/>
+                            <field name="competency_level"/>
+                            <field name="parent_id"/>
+                            <field name="note"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="vnpt_exam_competencies_tree" model="ir.ui.view">
+            <field name="name">vnpt_exam_competencies_tree</field>
+            <field name="model">vnpt_exam_competencies</field>
+            <field name="arch" type="xml">
+                <tree string="Từ điển năng lực">
+                    <field name="name"/>
+                    <field name="code_competency"/>
+                    <field name="type"/>
+                    <field name="competency_level" invisible="1"/>
+                    <field name="parent_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_vnpt_exam_competencies" model="ir.actions.act_window">
+            <field name="name">Từ điển năng lực</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">vnpt_exam_competencies</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="vnpt_exam_competencies_tree"/>
+        </record>
+
+        <!-- cây danh mục từ điển năng lực -->
+        <record id="vnpt_exam_competencies_list_tree" model="ir.ui.view">
+            <field name="name">vnpt_exam_competencies_list</field>
+            <field name="model">vnpt_exam_competencies</field>
+            <field name="field_parent">child_ids</field>
+            <field name="arch" type="xml">
+                <tree string="Cây danh mục phòng ban" colors="red:is_active=='deactivate'">
+                    <field name="name"/>
+                    <field name="code_competency"/>
+                    <field name="type"/>
+                    <field name="competency_level" invisible="1"/>
+                    <field name="parent_id"/>
+                    <field name="is_active" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="vnpt_exam_competencies_tree_action" model="ir.actions.act_window">
+            <field name="name">Cây từ điển năng lực</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">vnpt_exam_competencies</field>
+            <field name="domain">[('parent_id','=',False)]</field>
+            <field name="view_type">tree</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="vnpt_exam_competencies_list_tree"/>
+            <field name="help" type="html">
+                <p>
+                    Chưa có danh từ điển năng lực nào
+                </p>
+            </field>
+        </record>
     </data>
 </openerp>
