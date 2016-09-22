@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
+        <!-- abcd -->
         <menuitem name="Khảo sát khung năng lực" id="menu_ks_khung_nang_luc" />
         <!-- Khung năng lực -->
         <menuitem id="menu_quan_tri_bai_thi" name="Khung năng lực" parent="menu_ks_khung_nang_luc" sequence="1"/>
