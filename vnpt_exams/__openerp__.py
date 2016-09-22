@@ -26,7 +26,8 @@ Thi đánh giá năng lực nhân viên
         'views/structure/vnpt_exam_assign_employees_structure.xml',
         'views/structure/vnpt_exams_structures.xml',
         # exams
-
+        'views/exams/vnpt_exams.xml',
+        'views/exams/vnpt_questions.xml',
         # statistic
 
         # security

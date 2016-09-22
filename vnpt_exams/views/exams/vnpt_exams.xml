@@ -1,5 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
+        <record id="vnpt_exams_form" model="ir.ui.view">
+            <field name="name">vnpt_exams_form</field>
+            <field name="model">vnpt_exams</field>
+            <field name="arch" type="xml">
+                <form string="Quản lý đề thi">
+                    <header>
+                        <button name="action_open" type="object"
+                        string="Mở" attrs="{'invisible': [('status','!=','draft')]}"
+                        class="oe_highlight"/>
+                        <button name="action_close" type="object"
+                        string="Đóng" attrs="{'invisible': [('status','!=','open')]}"
+                        class="oe_highlight"/>
+                        <!--<button name="action_finish" type="object"-->
+                        <!--string="Kết thúc" attrs="{'invisible': [('status','not in',['open','close'])]}"-->
+                        <!--class="oe_highlight"/>-->
+                        <field name="status" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <group col="6">
+                            <field name="name"/>
+                            <newline/>
+                            <field name="structure_id"/>
+                            <newline/>
+                            <field name="duration_time"/>
+                            <field name="pass_point"/>
+                            <field name="is_question_reverse"/>
+                            <newline/>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="vnpt_exams_tree" model="ir.ui.view">
+            <field name="name">vnpt_exams_tree</field>
+            <field name="model">vnpt_exams</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="name"/>
+                    <field name="structure_id"/>
+                    <field name="duration_time"/>
+                    <field name="pass_point"/>
+                    <field name="is_question_reverse"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                </tree>
+            </field>
+        </record>
+        <record id="vnpt_exams_action" model="ir.actions.act_window">
+            <field name="name">danh sách đề thi</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">vnpt_exams</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <!-- Add Text Here -->chưa có ds nào
+                </p>
+                <p>
+                    <!-- More details about what a user can do with this object will be OK -->
+                </p>
+            </field>
+        </record>
     </data>
 </openerp>
